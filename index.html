@@ -8,7 +8,6 @@
   <meta property="og:title" content="RAIN — A Novel by Conner Michael">
   <meta property="og:description" content="A man receives transmissions from a grandson who doesn't exist yet, warning him that a tech CEO's neural chip will give her control of the American mind.">
   <meta property="og:type" content="website">
-  <!-- Replace with your actual cover image URL -->
   <meta property="og:image" content="coverimage.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -85,7 +84,7 @@
     /* ---- HERO ---- */
     .hero {
       text-align: center;
-      padding: 4rem 0 3rem;
+      padding: 4rem 0 2rem;
       position: relative;
     }
     .hero::before {
@@ -127,23 +126,54 @@
       font-style: italic;
       font-size: 1.05rem;
       color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+    .hero-date {
+      display: inline-block;
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border: 1px solid rgba(74, 123, 247, 0.25);
+      padding: 0.4rem 1rem;
+      border-radius: 20px;
+      margin-top: 0.5rem;
     }
 
     /* ---- COVER IMAGE ---- */
     .cover-section {
       text-align: center;
-      padding: 1rem 0 3rem;
+      padding: 1rem 0 1.5rem;
     }
     .cover-section img {
-      max-width: 280px;
+      max-width: 300px;
       width: 100%;
       border-radius: 4px;
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.04);
+      transition: transform 0.4s ease;
+    }
+    .cover-section img:hover {
+      transform: scale(1.02);
+    }
+    .read-sample {
+      display: inline-block;
+      margin-top: 1.25rem;
+      font-size: 0.8rem;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid rgba(74, 123, 247, 0.3);
+      padding-bottom: 2px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .read-sample:hover {
+      color: var(--text-primary);
+      border-color: var(--text-primary);
     }
 
     /* ---- BLURB ---- */
     .blurb {
-      padding: 0 0 3rem;
+      padding: 2rem 0 3rem;
     }
     .blurb-hook {
       font-family: var(--serif);
@@ -163,6 +193,62 @@
       color: var(--text-dim);
       font-size: 0.9rem;
       margin-top: 1.5rem;
+    }
+
+    /* ---- PULL QUOTE ---- */
+    .pull-quote {
+      border-left: 2px solid var(--accent);
+      padding: 0.75rem 0 0.75rem 1.25rem;
+      margin: 2rem 0;
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-primary);
+      opacity: 0.85;
+    }
+
+    /* ---- REVIEWS ---- */
+    .reviews {
+      padding: 0 0 3rem;
+    }
+    .reviews-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-dim);
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+    .review-cards {
+      display: grid;
+      gap: 1rem;
+    }
+    .review-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.25rem 1.5rem;
+    }
+    .review-card .stars {
+      color: #D4A843;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      margin-bottom: 0.5rem;
+    }
+    .review-card p {
+      font-family: var(--serif);
+      font-style: italic;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 0.5rem;
+    }
+    .review-card .reviewer {
+      font-family: var(--sans);
+      font-style: normal;
+      font-size: 0.75rem;
+      color: var(--text-dim);
     }
 
     /* ---- SIGNUP ---- */
@@ -185,52 +271,6 @@
       color: var(--text-dim);
       margin-bottom: 1.5rem;
     }
-    /* 
-      Fallback form styling — if you use MailerLite's 
-      embedded form, their styles will override this.
-      If you prefer a custom-styled form, use this one 
-      and point it to MailerLite via their API or 
-      a hidden action URL.
-    */
-    .signup-form {
-      display: flex;
-      gap: 8px;
-      max-width: 420px;
-      margin: 0 auto;
-    }
-    .signup-form input[type="email"] {
-      flex: 1;
-      min-width: 0;
-      padding: 0.75rem 1rem;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      background: var(--bg-elevated);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: var(--text-primary);
-      outline: none;
-      transition: border-color 0.2s;
-    }
-    .signup-form input[type="email"]::placeholder {
-      color: var(--text-dim);
-    }
-    .signup-form input[type="email"]:focus {
-      border-color: rgba(74, 123, 247, 0.4);
-    }
-    .signup-form button {
-      padding: 0.75rem 1.5rem;
-      font-family: var(--sans);
-      font-size: 0.85rem;
-      font-weight: 500;
-      background: var(--accent);
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: opacity 0.2s;
-    }
-    .signup-form button:hover { opacity: 0.85; }
 
     /* ---- LINKS ---- */
     .links {
@@ -296,26 +336,67 @@
     @media (max-width: 540px) {
       .hero-title { font-size: 3.5rem; }
       .signup { padding: 2rem 1.25rem; }
-      .signup-form { flex-direction: column; }
-      .signup-form button { width: 100%; }
       .nav-links { gap: 1rem; }
       .blurb-hook { font-size: 1.15rem; }
       .cover-section img { max-width: 220px; }
+      .pull-quote { font-size: 1rem; }
     }
 
-    /* ---- FADE IN ANIMATIONS ---- */
+    /* ---- SCROLL REVEAL ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .fade-in {
       opacity: 0;
       transform: translateY(16px);
       animation: fadeUp 0.6s ease forwards;
     }
-    .fade-in:nth-child(1) { animation-delay: 0.1s; }
-    .fade-in:nth-child(2) { animation-delay: 0.2s; }
-    .fade-in:nth-child(3) { animation-delay: 0.35s; }
-
+    .fade-in-1 { animation-delay: 0.1s; }
+    .fade-in-2 { animation-delay: 0.25s; }
+    .fade-in-3 { animation-delay: 0.4s; }
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
+
+    /* ---- MAILERLITE OVERRIDES ---- */
+    #mlb2-39206259.ml-form-embedContainer .ml-form-embedWrapper {
+      background-color: transparent !important;
+      border: none !important;
+      max-width: 420px !important;
+      margin: 0 auto !important;
+    }
+    #mlb2-39206259 .ml-form-embedBody { padding: 0 !important; }
+    #mlb2-39206259 .ml-form-embedContent { display: none !important; }
+    #mlb2-39206259 .ml-form-fieldRow input {
+      background-color: #1A1E28 !important;
+      color: #E8E6E1 !important;
+      border-color: rgba(255, 255, 255, 0.06) !important;
+      border-radius: 8px !important;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 0.9rem !important;
+      padding: 0.75rem 1rem !important;
+    }
+    #mlb2-39206259 .ml-form-fieldRow input::placeholder { color: #5C5A54 !important; }
+    #mlb2-39206259 .ml-form-fieldRow input:focus { border-color: rgba(74, 123, 247, 0.4) !important; outline: none !important; }
+    #mlb2-39206259 .ml-form-embedSubmit button {
+      background-color: #4A7BF7 !important;
+      border: none !important;
+      border-radius: 8px !important;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
+      font-size: 0.85rem !important;
+      font-weight: 500 !important;
+      color: #fff !important;
+      padding: 0.75rem 1.5rem !important;
+    }
+    #mlb2-39206259 .ml-form-embedSubmit button:hover { background-color: #3a6be0 !important; }
+    #mlb2-39206259 .ml-form-successContent h4 { color: #E8E6E1 !important; font-family: 'Instrument Serif', Georgia, serif !important; text-align: center !important; }
+    #mlb2-39206259 .ml-form-successContent p { color: #8A8880 !important; font-family: 'DM Sans', -apple-system, sans-serif !important; text-align: center !important; }
   </style>
 </head>
 <body>
@@ -332,99 +413,61 @@
     </nav>
 
     <!-- HERO -->
-    <section class="hero fade-in" id="book">
+    <section class="hero fade-in fade-in-1" id="book">
       <p class="hero-label">A science fiction thriller</p>
       <h1 class="hero-title">RAIN</h1>
       <div class="hero-rule"></div>
-     
+      <p class="hero-comp">Black Mirror meets Fahrenheit 451</p>
+      <span class="hero-date">Coming July 1, 2026</span>
     </section>
 
     <!-- COVER IMAGE -->
-    <section class="cover-section fade-in">
-      <!-- 
-        Replace the src below with your actual cover image.
-        Recommended: 600px wide, optimized for web (under 200kb).
-        Place the image file in the same folder as this HTML file,
-        or use a full URL.
-      -->
+    <section class="cover-section fade-in fade-in-2">
       <img src="coverimage.jpg" alt="RAIN by Conner Michael — book cover">
+      <br>
+      <a href="https://dl.bookfunnel.com/7us2mkvcpl" class="read-sample" target="_blank" rel="noopener">Read the first chapter &rarr;</a>
     </section>
 
     <!-- BLURB -->
-    <section class="blurb fade-in">
+    <section class="blurb reveal">
       <p class="blurb-hook">Devon Rosefeld's brain has been hijacked — by a grandson who doesn't exist yet.</p>
       <p>A static-filled voice from thirty years in the future delivers a chilling warning: tech mogul Peyton Viallis, CEO of RAIN, is about to pivot from Silicon Valley darling to presidential candidate. And when she wins, her revolutionary neural chip will give her a grip on the American mind that no election can undo.</p>
+
+      <div class="pull-quote">"Every time his grandson makes contact, the forces willing to kill to protect their vision of a perfect future get closer."</div>
+
       <p>After a bourbon-soaked first date with Ada, Devon unknowingly tips the first domino that unravels his quiet life. Now he's neck-deep in a conspiracy involving one of the most powerful people in America — while protecting a woman who may know more than she's letting on and the child they didn't plan for.</p>
       <p>Devon faces an impossible choice: stay silent and watch America sleepwalk into tyranny, or expose a conspiracy that will make him sound insane — and put him directly in the crosshairs.</p>
       <p class="blurb-fans">For fans of Blake Crouch and Andy Weir.</p>
     </section>
 
+    <!-- EARLY READER REVIEWS — uncomment when you have ARC reviews -->
+    <!--
+    <section class="reviews reveal">
+      <p class="reviews-label">What early readers are saying</p>
+      <div class="review-cards">
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Replace with a real reader quote. Pick the punchiest line from their review."</p>
+          <span class="reviewer">— Reader Name, ARC Reviewer</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"Another quote. Highlight different strengths — pacing, characters, the premise."</p>
+          <span class="reviewer">— Reader Name, Goodreads</span>
+        </div>
+        <div class="review-card">
+          <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p>"A third quote. Three is the sweet spot for credibility."</p>
+          <span class="reviewer">— Reader Name, BookTok</span>
+        </div>
+      </div>
+    </section>
+    -->
+
     <!-- SIGNUP -->
-    <section class="signup" id="signup">
+    <section class="signup reveal" id="signup">
       <h2 class="signup-heading">Want to know when RAIN drops?</h2>
       <p class="signup-sub">No spam. Just launch updates and a heads-up when the book is live.</p>
-
-      <!-- MailerLite Embedded Form (styled to match site) -->
-      <style>
-        /* Override MailerLite styles to match dark theme */
-        #mlb2-39206259.ml-form-embedContainer .ml-form-embedWrapper {
-          background-color: transparent !important;
-          border: none !important;
-          max-width: 420px !important;
-          margin: 0 auto !important;
-        }
-        #mlb2-39206259 .ml-form-embedBody {
-          padding: 0 !important;
-        }
-        #mlb2-39206259 .ml-form-embedContent {
-          display: none !important;
-        }
-        #mlb2-39206259 .ml-form-fieldRow input {
-          background-color: #1A1E28 !important;
-          color: #E8E6E1 !important;
-          border-color: rgba(255, 255, 255, 0.06) !important;
-          border-radius: 8px !important;
-          font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-          font-size: 0.9rem !important;
-          padding: 0.75rem 1rem !important;
-        }
-        #mlb2-39206259 .ml-form-fieldRow input::placeholder {
-          color: #5C5A54 !important;
-        }
-        #mlb2-39206259 .ml-form-fieldRow input:focus {
-          border-color: rgba(74, 123, 247, 0.4) !important;
-          outline: none !important;
-        }
-        #mlb2-39206259 .ml-form-embedSubmit button {
-          background-color: #4A7BF7 !important;
-          border: none !important;
-          border-radius: 8px !important;
-          font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif !important;
-          font-size: 0.85rem !important;
-          font-weight: 500 !important;
-          color: #fff !important;
-          padding: 0.75rem 1.5rem !important;
-          cursor: pointer;
-          transition: opacity 0.2s;
-        }
-        #mlb2-39206259 .ml-form-embedSubmit button:hover {
-          background-color: #3a6be0 !important;
-          opacity: 0.9;
-        }
-        #mlb2-39206259 .ml-form-successBody {
-          padding: 20px 0 !important;
-        }
-        #mlb2-39206259 .ml-form-successContent h4 {
-          color: #E8E6E1 !important;
-          font-family: 'Instrument Serif', Georgia, serif !important;
-          text-align: center !important;
-        }
-        #mlb2-39206259 .ml-form-successContent p {
-          color: #8A8880 !important;
-          font-family: 'DM Sans', -apple-system, sans-serif !important;
-          text-align: center !important;
-        }
-      </style>
 
       <div id="mlb2-39206259" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-39206259">
         <div class="ml-form-align-center">
@@ -472,7 +515,7 @@
     </section>
 
     <!-- LINKS -->
-    <div class="links">
+    <div class="links reveal">
       <a href="https://www.goodreads.com/user/show/147749441-conner-michael" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.6 3.6c2.4 0 4.2 2.1 4.2 5.4v.6h.06c0 3.6-1.74 6-4.26 6-2.16 0-3.54-1.44-4.08-3h-.06v2.7c0 2.4 1.26 3.9 3.78 3.9 1.5 0 2.7-.54 3.36-1.5h.06V19c-.84.78-2.1 1.2-3.54 1.2C9 20.22 7.2 18.3 7.2 15.3V9c0-3.3 1.8-5.4 4.2-5.4h1.2zm-.6 1.8c-1.56 0-2.58 1.38-2.58 3.6s1.02 3.6 2.58 3.6 2.58-1.38 2.58-3.6-1.02-3.6-2.58-3.6z"/></svg>
         Goodreads
@@ -488,7 +531,7 @@
     </div>
 
     <!-- ABOUT -->
-    <section class="about" id="about">
+    <section class="about reveal" id="about">
       <p class="about-label">About the author</p>
       <p>Conner Michael is a dad from the Midwest. When he's not writing, he's either spending time with his wife and children, trying not to screw up a new recipe, or enjoying a tall pint with his buddies. Conner started the RAIN series as a way to explore where this new world of AI might actually take us. This is his debut novel.</p>
     </section>
@@ -499,5 +542,23 @@
     </footer>
 
   </div>
+
+  <!-- Scroll reveal -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var reveals = document.querySelectorAll('.reveal');
+      function checkReveal() {
+        for (var i = 0; i < reveals.length; i++) {
+          var windowHeight = window.innerHeight;
+          var elementTop = reveals[i].getBoundingClientRect().top;
+          if (elementTop < windowHeight - 120) {
+            reveals[i].classList.add('visible');
+          }
+        }
+      }
+      window.addEventListener('scroll', checkReveal);
+      checkReveal();
+    });
+  </script>
 </body>
 </html>
